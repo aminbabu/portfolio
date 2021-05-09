@@ -1,114 +1,170 @@
-/* * {
-  color: #eeeeee;
-  color: #00adb5;
-  color: #393e46;
-  color: #222831;
-} */
-
-/****************************UNIVERSAL TAG STYLING START**************************/
-html {
+:root {
+  /************VARIABLES***********/
+  --primary-color: #00adb5;
+  --secondary-color: #eeeeee;
+  --text-color: #393e46;
+  --background-color: #222831;
+  /************UTILIEIS************/
   font-size: 62.5%;
 }
 
-body {
-  background-color: #eeeeee;
-  font-family: 'B612', sans-serif;
-  font-size: 1.6rem;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  color: #00adb5;
+body {
+  font-family: 'B612', sans-serif;
+  font-size: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Vollkorn', serif;
-  font-size: 6rem;
-  margin: 0;
-}
-
-h2, h3 {
-  color: #eeeeee;
-  font-family: 'Vollkorn', serif;
-}
-
-p {
-  line-height: 1.6;
-}
-
-a {
-  color: #eeeeee;
-  font-size: 1.3rem;
-  letter-spacing: 0.2rem;
-  padding: 0.6rem 3.2rem;
   text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
 }
-
-a:hover {
-  color: #00adb5;
-  box-shadow: 0 0.3rem 0.5rem 0 rgba(0 , 0, 0, 0.43),
-              -0.1rem 0 1rem 0 rgba(0 , 0, 0, 0.35);
-}
-
+/*
 img {
   width: 100%;
   object-fit: cover;
+} */
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
 }
 
-header {
-  background-color: #222831;
-  height: 100vh;
-  position: relative;
-}
-/****************************UNIVERSAL TAG STYLING END**************************/
-
-/****************************SECTION STYLING START**************************/
-/******************************** Header Section ********************************/
-.navigation-bar {
-  padding: 60px 0;
-}
-
-.navigation-bar ul {
-  align-items: center;
-  display: flex;
-  list-style-type: none;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-
-.navigation-bar li:hover {
-  transform: scale(1.1);
-  transition: all 0.3s ease;
-}
-
-.about-me {
-  display: flex;
-  height: 65vh;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.profile {
-  flex-basis: 49.98%;
-  text-align: center;
-}
-
-.profile img {
-  bottom: 0;
-  left: 200px;
+/************************MENU ICON************************/
+.menu-icon {
   position: absolute;
-  width: 360px;
+  top: 2rem;
+  right: 3rem;
 }
 
-.profile-text {
-  flex-basis: 49.98%;
+.bar {
+  background-color: var(--secondary-color);
+  border-radius: 0.2rem;
+  margin: 0.6rem 0;
+  height: 0.3rem;
+  width: 3.2rem;
 }
 
-.profile-text span {
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  text-decoration-color: #00adb5;
+/*********************HEADER SECTION**********************/
+header {
+  background-color: var(--background-color);
+  box-shadow: 0.2rem 0 0.5rem 0 rgba(0, 0, 0, 0.19),
+    0.4rem 0 2rem 0 rgba(0, 0, 0, 0.3);
+  height: 100%;
+  left: -100%;
+  position: fixed;
+  transition: all 0.5s ease;
+  top: 0;
+  width: 70%;
+  z-index: 999;
 }
-/****************************SECTION STYLING END**************************/
+
+header figure {
+  padding: 4rem 0 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+header figure .far {
+  color: var(--text-color);
+  font-size: 12rem;
+}
+
+header .social-links {
+  display: flex;
+  justify-content: center;
+}
+
+header .fab {
+  font-size: 1.8rem;
+  margin: 0 0.8rem;
+}
+
+header .fab:hover {
+  mix-blend-mode: luminosity;
+  color: var(--primary-color);
+}
+
+header h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  padding-bottom: 1.5rem;
+  mix-blend-mode: luminosity;
+}
+
+header hr {
+  background-color: var(--text-color);
+  border: none;
+  height: 0.125rem;
+  width: 20rem;
+  margin: 3rem auto;
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li a {
+  display: inline-block;
+  letter-spacing: 0.1rem;
+  padding: 1.5rem 0 1.5rem 4rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+header nav ul li a:hover:not(.active) {
+  color: var(--secondary-color);
+  background-color: var(--text-color);
+}
+
+.active {
+  color: var(--background-color);
+  background-color: var(--primary-color);
+  font-weight: 700;
+}
+
+/*********************HOME SECTION*********************/
+#home {
+  background-color: var(--background-color);
+  height: 100vh;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .menu-icon {
+    top: 4rem;
+    right: 5rem;
+  }
+
+  header {
+    width: 36%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .menu-icon {
+    display: none;
+  }
+
+  header {
+    left: 0;
+    width: 26%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  header {
+    width: 18%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  header {
+    width: 28rem;
+  }
+}
