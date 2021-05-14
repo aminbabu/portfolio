@@ -98,12 +98,12 @@ header h3 {
   mix-blend-mode: luminosity;
 }
 
-header hr {
-  background-color: var(--text-color);
-  border: none;
-  height: 0.125rem;
-  width: 20rem;
-  margin: 3rem auto;
+header nav {
+  border-width: 0.1rem 0 0 0;
+  border-style: solid;
+  border-color: var(--text-color);
+  margin: 3rem 0;
+  padding: 5rem 0;
 }
 
 header nav ul {
